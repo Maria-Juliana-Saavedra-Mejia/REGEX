@@ -1737,7 +1737,7 @@ db.personas.insertMany([
   ```
 - Consulta 29: Buscar profesiones que contienen palabras en plural (terminan en 's') 
   ```
-  db.personas.find({profesion: /s$/})
+  db.personas.find({profesion: /\b\w+s\b/})
   ```
 - Consulta 30: Buscar teléfonos que comienzan con paréntesis
   ```
