@@ -1613,32 +1613,133 @@ db.personas.insertMany([
 **Consultas**
 
 - Consulta 1: Buscar nombres que comienzan con 'A'
+  ```
+  db.personas.find({nombre:/^A/})
+  ```
 - Consulta 2: Buscar apellidos que terminan con 'ez'
+  ```
+  db.personas.find({apellido:/ez$/})
+  ```
 - Consulta 3: Buscar correos que contienen 'gmail'
+  ```
+  db.personas.find({correo:/gmail/})
+  ```
 - Consulta 4: Buscar correos que terminan en '.com'
+  ```
+  db.personas.find({correo:/\.com/})
+  ```
 - Consulta 5: Buscar ciudades que contienen una 'o'
+  ```
+  db.personas.find({ciudad:/o{1}/})
+  ```
+  -
 - Consulta 6: Buscar profesiones que comienzan con 'E'
+  ```
+  db.personas.find({profesion:/^E/})
+  ```
 - Consulta 7: Buscar nombres que contienen una vocal
+  ```
+  db.personas.find({nombre: /[aeiouAEIOU]/})
+  ```
+  -
 - Consulta 8: Buscar apellidos con doble letra 'r'
+  ```
+  db.personas.find({apellido:/r{2}/})
+  ```
+  -
 - Consulta 9: Buscar correos con números
+  ```
+  db.personas.find({correo:/[1-9]/})
+  ```
+  ```
+  db.personas.find({correo:/\d/})
+  ```
 - Consulta 10: Buscar profesiones que contienen 'Manager'
+  ```
+  db.personas.find({profesion:/Manager/})
+  ```
+  en caso de omitir los la mayuscula.
+  ```
+   db.personas.find({profesion:/Manager/i})
+  ```
 - Consulta 11: Buscar nombres que tienen exactamente 4 letras
+  ```
+  db.personas.find({nombre: /^.{4}$/})
+  ```
 - Consulta 12: Buscar apellidos con más de 6 letras
+  ```
+    db.personas.find({apellido: /^.{6}+/})
+  ```
 - Consulta 13: Buscar correos que comienzan con 'l'
+  ```
+    db.personas.find({correo: /^l/})
+  ```
 - Consulta 14: Buscar ciudades que terminan con vocal
+  ```
+  db.personas.find({ciudad: /[aeiouAEIOU]$/})
+  ```
 - Consulta 15: Buscar teléfonos con guiones
+  ```
+  db.personas.find({telefono: /-/})
+  ```
 - Consulta 16: Buscar profesiones que contengan 'Engineer'
+  ```
+  db.personas.find({profesion: /Engineer/})
+  ```
 - Consulta 17: Buscar nombres con letras mayúsculas
+  ```
+  db.personas.find({nombre: /[A-Z]/})
+  ```
 - Consulta 18: Buscar apellidos que contienen 'z'
+  ```
+  db.personas.find({apellido: /z/})
+  ```
 - Consulta 19: Buscar correos con subdominio (ej. usuario@empresa.com)
+  ```
+  db.personas.find({correo: /@.+\..+/})
+  ```
 - Consulta 20: Buscar ciudades que comienzan con consonante
+  ```
+  db.personas.find({ciudad: /^[BCDFGHJKLMNPQRSTVWXYZ]/i})
+  ```
 - Consulta 21: Buscar nombres que terminan con 'n'
+  ```
+  db.personas.find({nombre: /n$/})
+  ```
 - Consulta 22: Buscar profesiones que terminan en 'ist'
+  ```
+  db.personas.find({profesion: /ist$/})
+  ```
 - Consulta 23: Buscar apellidos que contienen una 'a' seguida de una consonante
+  ```
+  db.personas.find({apellido: /a[BCDFGHJKLMNPQRSTVWXYZ]/i})
+  ```
 - Consulta 24: Buscar correos que no contienen números
+  ```
+  db.personas.find({correo: /^[^0-9]*$/})
+  ```
+  -
 - Consulta 25: Buscar ciudades con doble vocal
+  ```
+  db.personas.find({ciudad:/a{2}|e{2}|i{2}|o{2}|u{2}/i})
+  ```
 - Consulta 26: Buscar profesiones con espacios
+  ```
+  db.personas.find({profesion:/ /})
+  ```
 - Consulta 27: Buscar nombres con al menos una letra repetida
+  ```
+  db.personas.find({nombre: /([a-zA-Z]).*\1/})
+  ```
 - Consulta 28: Buscar apellidos que no contienen 'e'
+  ```
+  db.personas.find({apellido: /^e*$/})
+  ```
 - Consulta 29: Buscar profesiones que contienen palabras en plural (terminan en 's') 
+  ```
+  db.personas.find({profesion: /s$/})
+  ```
 - Consulta 30: Buscar teléfonos que comienzan con paréntesis
+  ```
+  db.personas.find({telefono: /\(/})
+  ```
